@@ -104,7 +104,7 @@ We are going to assume an initial AWS EKS cluster is setup. Use the AWS Document
 Dapr requires persistent storage. We will need to setup persistent storage on EKS.
 
 1. Ensure to install the EBS CSI driver addon to your cluster from the AWS EKS management console
-2. Setup a `StorageClass` based on this document (https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html)[https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html]
+2. Setup a `StorageClass` based on this document [https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html)
 3. Your EKS role needs to have the permissions to create EBS Volumes. You can add the AWS Managed permission `AmazonEBSCSIDriverPolicy` to the role that is running your EKS Cluster
 
 If you followed the above example, your StorageClass name is `ebs-sc`
