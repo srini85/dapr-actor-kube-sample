@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-device-client
+  labels:
+    app: smart-device-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-device-client
+  template:
+    metadata:
+      labels:
+        app: smart-device-client
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "smart-device-client"
+        dapr.io/enable-api-logging: "true"
+    spec:
+      containers:
+      - name: smart-device-client
+        image: localhost:5000/smart-device-client
+        imagePullPolicy: Always

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SmartDevice.Client": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

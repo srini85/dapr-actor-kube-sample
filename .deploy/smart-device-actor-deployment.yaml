@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smart-device-actor
+  labels:
+    app: smart-device-actor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smart-device-actor
+  template:
+    metadata:
+      labels:
+        app: smart-device-actor
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "smart-device-actor"
+        dapr.io/app-port: "8080"
+        dapr.io/enable-api-logging: "true"
+    spec:
+      containers:
+      - name: smart-device-actor
+        image: localhost:5000/smart-device-actor
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
